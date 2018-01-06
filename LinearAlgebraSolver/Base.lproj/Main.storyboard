@@ -54,8 +54,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7cz-xq-zSE">
-                                                    <rect key="frame" x="-47" y="0.0" width="97" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7cz-xq-zSE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -63,7 +63,9 @@
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="7cz-xq-zSE" firstAttribute="centerY" secondItem="o3J-IC-MBN" secondAttribute="centerY" id="AiU-7S-slA"/>
                                             <constraint firstItem="7cz-xq-zSE" firstAttribute="height" secondItem="o3J-IC-MBN" secondAttribute="height" id="DMu-VQ-czW"/>
+                                            <constraint firstItem="7cz-xq-zSE" firstAttribute="centerX" secondItem="o3J-IC-MBN" secondAttribute="centerX" id="S1Y-r0-LoJ"/>
                                             <constraint firstItem="7cz-xq-zSE" firstAttribute="width" secondItem="o3J-IC-MBN" secondAttribute="width" id="SsP-6n-UGN"/>
                                         </constraints>
                                         <connections>
@@ -74,7 +76,6 @@
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="cNZ-vb-ebe"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="F3I-2t-Isu"/>
-                                    <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="fin-7u-OH9"/>
                                 </connections>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tir-Ln-sSA">
@@ -298,7 +299,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5m-co-Oi2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5m-co-Oi2">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -309,6 +310,8 @@
                                         <constraints>
                                             <constraint firstItem="V5m-co-Oi2" firstAttribute="width" secondItem="1Xq-TM-pXI" secondAttribute="width" id="YyE-Xm-puG"/>
                                             <constraint firstItem="V5m-co-Oi2" firstAttribute="height" secondItem="1Xq-TM-pXI" secondAttribute="height" id="pZt-eO-Kaa"/>
+                                            <constraint firstItem="V5m-co-Oi2" firstAttribute="centerY" secondItem="1Xq-TM-pXI" secondAttribute="centerY" id="uRM-br-Ix1"/>
+                                            <constraint firstItem="V5m-co-Oi2" firstAttribute="centerX" secondItem="1Xq-TM-pXI" secondAttribute="centerX" id="yIA-dk-srG"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="resultCellLabel" destination="V5m-co-Oi2" id="Ryt-x2-BF9"/>

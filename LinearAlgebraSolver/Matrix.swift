@@ -12,7 +12,7 @@ class Matrix: NSCopying {
     
     var rows: Int = 0
     var cols: Int = 0
-    var det: Int = -101
+    var det: Int  = 0
     var matrix = [[Any]]()
     var isEmpty = true
     

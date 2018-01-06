@@ -38,7 +38,6 @@ class Results: UIViewController {
         resultsTitleLabel.text = titleText
     }
     
-    
 }
 
 extension Results: UICollectionViewDataSource {
