@@ -6,8 +6,10 @@ IOS Swift Application to solve dynamic matrix equations
 - matrix subtraction
 - dot product
 - operation chain
+- matrix inverse
+- determinant
+- transpose matrix
 
 --Coming Soon--
-- finding matrix inverse
 - row echelon form
 - saving matricies with core data

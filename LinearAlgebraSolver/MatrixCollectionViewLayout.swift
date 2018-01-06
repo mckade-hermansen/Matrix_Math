@@ -10,8 +10,8 @@ import UIKit
 
 class MatrixCollectionViewLayout: UICollectionViewLayout {
     
-    fileprivate let CELL_HEIGHT = 50.0
-    fileprivate let CELL_WIDTH  = 50.0
+    fileprivate let CELL_HEIGHT = 65.0
+    fileprivate let CELL_WIDTH  = 70.0
     fileprivate var cellHash = Dictionary<IndexPath, UICollectionViewLayoutAttributes>()
     fileprivate var contentSize = CGSize(width: 0, height: 0)
     

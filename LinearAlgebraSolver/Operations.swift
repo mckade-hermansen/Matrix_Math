@@ -16,6 +16,9 @@ class Operations: UIViewController {
     var matrix = Matrix()
     var oldMatrix = Matrix()
     
+    @IBOutlet weak var transposeButtonOutlet: UIButton!
+    @IBOutlet weak var InverseButtonOutlet: UIButton!
+    @IBOutlet weak var determinantButtonOutlet: UIButton!
     @IBAction func addButton(_ sender: UIButton) {
         
         executeOperation(op: "add")
@@ -34,6 +37,24 @@ class Operations: UIViewController {
         loadMatrixViewController(op: "mul")
     }
     
+    @IBAction func transposeButton(_ sender: UIButton) {
+        
+        executeOperation(op: "trans")
+        loadResultMatrix()
+    }
+    
+    @IBAction func determinantButton(_ sender: UIButton) {
+        
+        executeOperation(op: "det")
+        loadResultMatrix()
+    }
+    
+    @IBAction func InverseButton(_ sender: UIButton) {
+        
+        executeOperation(op: "inv")
+        loadResultMatrix(op: "inv")
+    }
+    
     @IBAction func equalButton(_ sender: UIButton) {
         
         if lastOperation != ""{
@@ -44,6 +65,21 @@ class Operations: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
+        if lastOperation != "" {
+            disableButtons()
+        }
+        
+        if matrix.rows != matrix.cols {
+            disableButtons()
+            transposeButtonOutlet.isEnabled = true
+        }
+    }
+    
+    func disableButtons() {
+        
+        InverseButtonOutlet.isEnabled     = false
+        determinantButtonOutlet.isEnabled = false
+        transposeButtonOutlet.isEnabled   = false
     }
     
     func executeOperation(op: String){
@@ -56,6 +92,16 @@ class Operations: UIViewController {
         }
         if op == "mul" {
             operation = MultiplyOperation(oldMatrix: oldMatrix, newMatrix: matrix)
+        }
+        if op == "trans" {
+            operation.resultMatrix = matrix.transpose()
+        }
+        if op == "det" {
+            operation.resultMatrix = Matrix(cols: 1, rows: 1)
+            operation.resultMatrix.matrix[0][0] = matrix.findDeterminant()
+        }
+        if op == "inv" {
+            operation = InverseOperation(oldMatrix: oldMatrix, newMatrix: matrix)
         }
         
         operation.execute()
@@ -76,13 +122,19 @@ class Operations: UIViewController {
         present(matrixVC, animated: true)
     }
     
-    func loadResultMatrix(){
+    func loadResultMatrix(op: String = ""){
         
         guard let resultsVC = storyboard?.instantiateViewController(withIdentifier: "results") as? Results else {
             print("couldn't get results VC")
             return
         }
-        resultsVC.resMatrix = operation.resultMatrix
+        if op == "inv" && matrix.det == 0 {
+            resultsVC.titleText = "No Inverse Exists"
+        }
+        else {
+            resultsVC.resMatrix = operation.resultMatrix
+        }
+        
         present(resultsVC, animated: true)
     }
     

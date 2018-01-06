@@ -28,7 +28,8 @@ class AddOperation: Operation {
         
         for i in 0...oldMatrix.rows - 1 {
             for j in 0...oldMatrix.cols - 1 {
-                resultMatrix.matrix[i][j] = oldMatrix.matrix[i][j] + newMatrix.matrix[i][j]
+                resultMatrix.matrix[i][j] = (oldMatrix.matrix[i][j] as! Int) +
+                                            (newMatrix.matrix[i][j] as! Int)
             }
         }
     }

@@ -25,6 +25,7 @@
 		5C66B8A61F0178B500864ED0 /* LinearAlgebraSolverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66B8A51F0178B500864ED0 /* LinearAlgebraSolverUITests.swift */; };
 		5CCCE4511F019D2D00438FA9 /* matrixCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCE4501F019D2D00438FA9 /* matrixCell.swift */; };
 		5CCCE4531F01B1DC00438FA9 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCCE4521F01B1DC00438FA9 /* Operations.swift */; };
+		5CDEC9341FF435990094FEF8 /* InverseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDEC9331FF435990094FEF8 /* InverseOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		5C66B8A71F0178B500864ED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CCCE4501F019D2D00438FA9 /* matrixCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = matrixCell.swift; sourceTree = "<group>"; };
 		5CCCE4521F01B1DC00438FA9 /* Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
+		5CDEC9331FF435990094FEF8 /* InverseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InverseOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				5C3BDCEC1FEE392A0004CF65 /* addOperation.swift */,
 				5C3BDCEE1FEEF3310004CF65 /* SubtractOperation.swift */,
 				5C3BDCF21FEF8BB50004CF65 /* MultiplyOperation.swift */,
+				5CDEC9331FF435990094FEF8 /* InverseOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				5C3BDCF11FEF8A2F0004CF65 /* ResultMatrixCell.swift in Sources */,
 				5C3BDCEB1FEE37650004CF65 /* Operation.swift in Sources */,
 				5C3BDCEF1FEEF3310004CF65 /* SubtractOperation.swift in Sources */,
+				5CDEC9341FF435990094FEF8 /* InverseOperation.swift in Sources */,
 				5C66B8831F0178B500864ED0 /* AppDelegate.swift in Sources */,
 				5C3BDCF31FEF8BB50004CF65 /* MultiplyOperation.swift in Sources */,
 				5C3BDCED1FEE392A0004CF65 /* addOperation.swift in Sources */,

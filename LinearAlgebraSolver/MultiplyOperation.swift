@@ -40,7 +40,7 @@ class MultiplyOperation: Operation {
         var tempArr = [Int]()
         
         for col in 0...oldMatrix.cols - 1 {
-            tempArr.append(oldMatrix.matrix[row][col])
+            tempArr.append(oldMatrix.matrix[row][col] as! Int)
         }
         
         return tempArr
@@ -51,7 +51,7 @@ class MultiplyOperation: Operation {
         var sum = 0
         
         for i in 0...newMatrix.rows - 1 {
-            sum += (curRow[i] * newMatrix.matrix[i][col])
+            sum += (curRow[i] * (newMatrix.matrix[i][col] as! Int))
         }
         
         return sum

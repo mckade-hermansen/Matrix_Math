@@ -13,7 +13,9 @@ class Results: UIViewController {
     
     var resMatrix = Matrix()
     var operation = ""
+    var titleText = "Results"
     
+    @IBOutlet weak var resultsTitleLabel: UILabel!
     @IBOutlet weak var resultsMatrix: UICollectionView!
     
     @IBAction func StartOverPressed(_ sender: UIButton) {
@@ -33,6 +35,7 @@ class Results: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
+        resultsTitleLabel.text = titleText
     }
     
     
@@ -50,7 +53,7 @@ extension Results: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "resultCell", for: indexPath) as? ResultMatrixCell
-        cell?.resultCellLabel.text = String(resMatrix.matrix[indexPath.section][indexPath.row])
+        cell?.resultCellLabel.text = String(describing: resMatrix.matrix[indexPath.section][indexPath.row])
         return cell!
     }
 }
