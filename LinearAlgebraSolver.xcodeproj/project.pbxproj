@@ -15,10 +15,12 @@
 		5C3BDCF11FEF8A2F0004CF65 /* ResultMatrixCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BDCF01FEF8A2F0004CF65 /* ResultMatrixCell.swift */; };
 		5C3BDCF31FEF8BB50004CF65 /* MultiplyOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BDCF21FEF8BB50004CF65 /* MultiplyOperation.swift */; };
 		5C4AE1BC1F1AC3AE007574EB /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AE1BB1F1AC3AE007574EB /* Matrix.swift */; };
+		5C5F7F6B20019E05005F8E23 /* LoadMatricies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F7F6A20019E05005F8E23 /* LoadMatricies.swift */; };
+		5C5F7F6E2002A497005F8E23 /* MatrixModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F7F6C2002A497005F8E23 /* MatrixModel.xcdatamodeld */; };
+		5C5F7F702002A756005F8E23 /* MatrixEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F7F6F2002A756005F8E23 /* MatrixEntity.swift */; };
 		5C66B8831F0178B500864ED0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66B8821F0178B500864ED0 /* AppDelegate.swift */; };
 		5C66B8851F0178B500864ED0 /* MatrixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66B8841F0178B500864ED0 /* MatrixVC.swift */; };
 		5C66B8881F0178B500864ED0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C66B8861F0178B500864ED0 /* Main.storyboard */; };
-		5C66B88B1F0178B500864ED0 /* LinearAlgebraSolver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C66B8891F0178B500864ED0 /* LinearAlgebraSolver.xcdatamodeld */; };
 		5C66B88D1F0178B500864ED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C66B88C1F0178B500864ED0 /* Assets.xcassets */; };
 		5C66B8901F0178B500864ED0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C66B88E1F0178B500864ED0 /* LaunchScreen.storyboard */; };
 		5C66B89B1F0178B500864ED0 /* LinearAlgebraSolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66B89A1F0178B500864ED0 /* LinearAlgebraSolverTests.swift */; };
@@ -54,11 +56,13 @@
 		5C3BDCF01FEF8A2F0004CF65 /* ResultMatrixCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultMatrixCell.swift; sourceTree = "<group>"; };
 		5C3BDCF21FEF8BB50004CF65 /* MultiplyOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplyOperation.swift; sourceTree = "<group>"; };
 		5C4AE1BB1F1AC3AE007574EB /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		5C5F7F6A20019E05005F8E23 /* LoadMatricies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMatricies.swift; sourceTree = "<group>"; };
+		5C5F7F6D2002A497005F8E23 /* MatrixModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MatrixModel.xcdatamodel; sourceTree = "<group>"; };
+		5C5F7F6F2002A756005F8E23 /* MatrixEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixEntity.swift; sourceTree = "<group>"; };
 		5C66B87F1F0178B500864ED0 /* LinearAlgebraSolver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinearAlgebraSolver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C66B8821F0178B500864ED0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C66B8841F0178B500864ED0 /* MatrixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixVC.swift; sourceTree = "<group>"; };
 		5C66B8871F0178B500864ED0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5C66B88A1F0178B500864ED0 /* LinearAlgebraSolver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LinearAlgebraSolver.xcdatamodel; sourceTree = "<group>"; };
 		5C66B88C1F0178B500864ED0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C66B88F1F0178B500864ED0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C66B8911F0178B500864ED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				5C66B8841F0178B500864ED0 /* MatrixVC.swift */,
 				5CCCE4521F01B1DC00438FA9 /* Operations.swift */,
 				5C100A7F1F0C299600BD5324 /* Results.swift */,
+				5C5F7F6A20019E05005F8E23 /* LoadMatricies.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -151,10 +156,11 @@
 				5C66B88C1F0178B500864ED0 /* Assets.xcassets */,
 				5C66B88E1F0178B500864ED0 /* LaunchScreen.storyboard */,
 				5C66B8911F0178B500864ED0 /* Info.plist */,
-				5C66B8891F0178B500864ED0 /* LinearAlgebraSolver.xcdatamodeld */,
 				5C4AE1BB1F1AC3AE007574EB /* Matrix.swift */,
 				5C3BDCE51FEC45B40004CF65 /* MatrixCollectionViewLayout.swift */,
 				5C3BDCF01FEF8A2F0004CF65 /* ResultMatrixCell.swift */,
+				5C5F7F6C2002A497005F8E23 /* MatrixModel.xcdatamodeld */,
+				5C5F7F6F2002A756005F8E23 /* MatrixEntity.swift */,
 			);
 			path = LinearAlgebraSolver;
 			sourceTree = "<group>";
@@ -315,16 +321,18 @@
 				5C100A801F0C299600BD5324 /* Results.swift in Sources */,
 				5C3BDCE61FEC45B40004CF65 /* MatrixCollectionViewLayout.swift in Sources */,
 				5CCCE4511F019D2D00438FA9 /* matrixCell.swift in Sources */,
+				5C5F7F6B20019E05005F8E23 /* LoadMatricies.swift in Sources */,
 				5C66B8851F0178B500864ED0 /* MatrixVC.swift in Sources */,
 				5C3BDCF11FEF8A2F0004CF65 /* ResultMatrixCell.swift in Sources */,
 				5C3BDCEB1FEE37650004CF65 /* Operation.swift in Sources */,
 				5C3BDCEF1FEEF3310004CF65 /* SubtractOperation.swift in Sources */,
+				5C5F7F6E2002A497005F8E23 /* MatrixModel.xcdatamodeld in Sources */,
 				5CDEC9341FF435990094FEF8 /* InverseOperation.swift in Sources */,
 				5C66B8831F0178B500864ED0 /* AppDelegate.swift in Sources */,
 				5C3BDCF31FEF8BB50004CF65 /* MultiplyOperation.swift in Sources */,
 				5C3BDCED1FEE392A0004CF65 /* addOperation.swift in Sources */,
-				5C66B88B1F0178B500864ED0 /* LinearAlgebraSolver.xcdatamodeld in Sources */,
 				5CCCE4531F01B1DC00438FA9 /* Operations.swift in Sources */,
+				5C5F7F702002A756005F8E23 /* MatrixEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,13 +600,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5C66B8891F0178B500864ED0 /* LinearAlgebraSolver.xcdatamodeld */ = {
+		5C5F7F6C2002A497005F8E23 /* MatrixModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5C66B88A1F0178B500864ED0 /* LinearAlgebraSolver.xcdatamodel */,
+				5C5F7F6D2002A497005F8E23 /* MatrixModel.xcdatamodel */,
 			);
-			currentVersion = 5C66B88A1F0178B500864ED0 /* LinearAlgebraSolver.xcdatamodel */;
-			path = LinearAlgebraSolver.xcdatamodeld;
+			currentVersion = 5C5F7F6D2002A497005F8E23 /* MatrixModel.xcdatamodel */;
+			path = MatrixModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

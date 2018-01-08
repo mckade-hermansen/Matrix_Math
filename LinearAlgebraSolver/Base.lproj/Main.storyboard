@@ -36,14 +36,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyN-O4-rIO">
-                                <rect key="frame" x="164.5" y="627" width="46" height="30"/>
-                                <state key="normal" title="Next &gt;"/>
+                                <rect key="frame" x="135" y="627" width="105" height="30"/>
+                                <state key="normal" title="Do Operation &gt;"/>
                                 <connections>
                                     <action selector="nextMatrixButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hIH-v9-Xfs"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" keyboardDismissMode="onDrag" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypl-9k-F8j">
-                                <rect key="frame" x="16" y="147" width="343" height="472"/>
+                                <rect key="frame" x="16" y="147" width="343" height="390"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="QIw-pm-txW" customClass="MatrixCollectionViewLayout" customModule="LinearAlgebraSolver" customModuleProvider="target"/>
                                 <cells>
@@ -109,6 +109,20 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QF-ci-rNQ">
+                                <rect key="frame" x="147" y="547" width="81" height="30"/>
+                                <state key="normal" title="Load Matrix"/>
+                                <connections>
+                                    <action selector="LoadMatrixButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4bW-GA-fOz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPN-Ng-1eh">
+                                <rect key="frame" x="147" y="587" width="80" height="30"/>
+                                <state key="normal" title="Save Matrix"/>
+                                <connections>
+                                    <action selector="SaveMatrixButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8TJ-Z3-FgG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -116,15 +130,19 @@
                             <constraint firstItem="isg-Qa-W7p" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="4f9-oo-Sst"/>
                             <constraint firstItem="Tir-Ln-sSA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Vc-JN-yFK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ypl-9k-F8j" secondAttribute="trailing" id="6ng-zN-Tgb"/>
+                            <constraint firstItem="6QF-ci-rNQ" firstAttribute="top" secondItem="Ypl-9k-F8j" secondAttribute="bottom" constant="10" id="7uv-UO-Ecs"/>
                             <constraint firstItem="Ypl-9k-F8j" firstAttribute="top" secondItem="Wow-hw-4pr" secondAttribute="bottom" constant="8.5" id="Ch8-1G-WpC"/>
+                            <constraint firstItem="6QF-ci-rNQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Io8-TL-hZP"/>
                             <constraint firstItem="Wow-hw-4pr" firstAttribute="top" secondItem="Tir-Ln-sSA" secondAttribute="bottom" constant="10" id="KG9-Rv-dzD"/>
                             <constraint firstItem="isg-Qa-W7p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L6t-xH-hC6"/>
-                            <constraint firstItem="vyN-O4-rIO" firstAttribute="top" secondItem="Ypl-9k-F8j" secondAttribute="bottom" constant="8" id="fGp-fg-5xx"/>
+                            <constraint firstItem="vyN-O4-rIO" firstAttribute="top" secondItem="rPN-Ng-1eh" secondAttribute="bottom" constant="10" id="dzd-mW-F3s"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vyN-O4-rIO" secondAttribute="bottom" constant="10" id="hgp-9n-38m"/>
+                            <constraint firstItem="rPN-Ng-1eh" firstAttribute="top" secondItem="6QF-ci-rNQ" secondAttribute="bottom" constant="10" id="lA0-nC-qGS"/>
                             <constraint firstItem="vyN-O4-rIO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lU3-lt-Yj3"/>
                             <constraint firstItem="Wow-hw-4pr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oaO-Mp-nYv"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Ypl-9k-F8j" secondAttribute="leading" id="sSE-yG-omA"/>
                             <constraint firstItem="Tir-Ln-sSA" firstAttribute="top" secondItem="isg-Qa-W7p" secondAttribute="bottom" constant="20" id="xr2-j3-YbU"/>
+                            <constraint firstItem="rPN-Ng-1eh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zYL-0g-ANU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FyH-AC-IZO"/>
@@ -140,6 +158,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="137.18140929535232"/>
+        </scene>
+        <!--Load Matricies-->
+        <scene sceneID="cxM-cu-cPh">
+            <objects>
+                <viewController storyboardIdentifier="loadMatricies" id="Uds-L5-4VH" customClass="LoadMatricies" customModule="LinearAlgebraSolver" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fyx-Uw-TvS"/>
+                        <viewControllerLayoutGuide type="bottom" id="KhG-o6-NVI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jpz-KR-nah">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Matrix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMT-Tl-OB7">
+                                <rect key="frame" x="130.5" y="30" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qmj-ge-XVK">
+                                <rect key="frame" x="16" y="61" width="343" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="loadMatrixCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loadMatrixCell" id="rRn-pq-4zJ">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rRn-pq-4zJ" id="YKa-J3-TLq">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Uds-L5-4VH" id="FVH-cY-sPv"/>
+                                    <outlet property="delegate" destination="Uds-L5-4VH" id="zhP-MP-l7e"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzY-0r-oZP">
+                                <rect key="frame" x="158" y="627" width="58" height="30"/>
+                                <state key="normal" title="Go Back"/>
+                                <connections>
+                                    <action selector="GoBackButton:" destination="Uds-L5-4VH" eventType="touchUpInside" id="kKN-pz-EfJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qmj-ge-XVK" firstAttribute="top" secondItem="RMT-Tl-OB7" secondAttribute="bottom" constant="10" id="B0o-rQ-3lc"/>
+                            <constraint firstItem="RMT-Tl-OB7" firstAttribute="centerX" secondItem="Jpz-KR-nah" secondAttribute="centerX" id="Lzw-wV-iFl"/>
+                            <constraint firstItem="RMT-Tl-OB7" firstAttribute="top" secondItem="fyx-Uw-TvS" secondAttribute="bottom" constant="10" id="SYb-MU-fhT"/>
+                            <constraint firstItem="KhG-o6-NVI" firstAttribute="top" secondItem="XzY-0r-oZP" secondAttribute="bottom" constant="10" id="cle-cC-k69"/>
+                            <constraint firstItem="XzY-0r-oZP" firstAttribute="centerX" secondItem="Jpz-KR-nah" secondAttribute="centerX" id="kH4-hB-viQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="qmj-ge-XVK" secondAttribute="leading" id="khc-Fr-Jzo"/>
+                            <constraint firstItem="XzY-0r-oZP" firstAttribute="top" secondItem="qmj-ge-XVK" secondAttribute="bottom" constant="10" id="lNu-hu-jkT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qmj-ge-XVK" secondAttribute="trailing" id="tam-O1-Qcx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadMatriciesTableView" destination="qmj-ge-XVK" id="Pfd-TD-Fse"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2du-pc-E3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072.8" y="859.52023988005999"/>
         </scene>
         <!--Operations-->
         <scene sceneID="0NB-5z-Uv1">
@@ -288,7 +370,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gfP-Mf-BNP">
-                                <rect key="frame" x="16" y="59" width="343" height="560"/>
+                                <rect key="frame" x="16" y="59" width="343" height="478"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="vca-Ts-k4G" customClass="MatrixCollectionViewLayout" customModule="LinearAlgebraSolver" customModuleProvider="target"/>
                                 <cells>
@@ -330,17 +412,29 @@
                                     <action selector="StartOverPressed:" destination="7BA-tW-cR6" eventType="touchUpInside" id="CYG-cZ-GYe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzX-MG-8T7">
+                                <rect key="frame" x="147" y="547" width="80" height="30"/>
+                                <state key="normal" title="Save Matrix"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAG-Ub-ajt">
+                                <rect key="frame" x="134.5" y="587" width="105" height="30"/>
+                                <state key="normal" title="Do Operation &gt;"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HAG-Ub-ajt" firstAttribute="centerX" secondItem="scD-kS-ns4" secondAttribute="centerX" id="4bK-B3-qpo"/>
                             <constraint firstItem="dNI-Mq-RRn" firstAttribute="top" secondItem="nt9-KN-ysM" secondAttribute="bottom" constant="10" id="BHD-db-DOQ"/>
+                            <constraint firstItem="FzX-MG-8T7" firstAttribute="centerX" secondItem="scD-kS-ns4" secondAttribute="centerX" id="CWM-J0-AvB"/>
                             <constraint firstAttribute="leadingMargin" secondItem="gfP-Mf-BNP" secondAttribute="leading" id="JMG-qf-321"/>
                             <constraint firstItem="gfP-Mf-BNP" firstAttribute="top" secondItem="FQY-8d-6Ez" secondAttribute="bottom" constant="10" id="Mrl-mu-PPn"/>
                             <constraint firstItem="FQY-8d-6Ez" firstAttribute="top" secondItem="Or4-QC-bU4" secondAttribute="bottom" constant="8" id="PHA-eO-GKO"/>
-                            <constraint firstItem="nt9-KN-ysM" firstAttribute="top" secondItem="gfP-Mf-BNP" secondAttribute="bottom" constant="8" id="dLZ-zr-4az"/>
+                            <constraint firstItem="HAG-Ub-ajt" firstAttribute="top" secondItem="FzX-MG-8T7" secondAttribute="bottom" constant="10" id="c5S-cq-fOr"/>
                             <constraint firstItem="nt9-KN-ysM" firstAttribute="centerX" secondItem="scD-kS-ns4" secondAttribute="centerX" id="hGy-VQ-5yC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gfP-Mf-BNP" secondAttribute="trailing" id="q0g-cX-M30"/>
                             <constraint firstItem="FQY-8d-6Ez" firstAttribute="centerX" secondItem="scD-kS-ns4" secondAttribute="centerX" id="rBS-fA-9rk"/>
+                            <constraint firstItem="FzX-MG-8T7" firstAttribute="top" secondItem="gfP-Mf-BNP" secondAttribute="bottom" constant="10" id="viw-4C-LwR"/>
+                            <constraint firstItem="nt9-KN-ysM" firstAttribute="top" secondItem="HAG-Ub-ajt" secondAttribute="bottom" constant="10" id="xie-8H-5ja"/>
                         </constraints>
                     </view>
                     <connections>

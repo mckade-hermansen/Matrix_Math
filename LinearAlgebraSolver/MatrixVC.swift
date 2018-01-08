@@ -16,6 +16,7 @@ class MatrixVC: UIViewController {
     var oldMatrix = Matrix()
     var operation = ""
     var indexPaths = [IndexPath]()
+    var fromCoreData = false
     
     @IBOutlet weak var matrixCollectionView: UICollectionView!
     @IBOutlet weak var rowTextField: UITextField!
@@ -24,11 +25,51 @@ class MatrixVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var enterButtonOutlet: UIButton!
     
+    @IBAction func LoadMatrixButton(_ sender: UIButton) {
+        
+        guard let loadMatriciesVC = storyboard?.instantiateViewController(withIdentifier: "loadMatricies") as? LoadMatricies else {
+            return
+        }
+        present(loadMatriciesVC, animated: true)
+    }
+    
+    @IBAction func SaveMatrixButton(_ sender: UIButton) {
+        
+        createMatrix()
+        
+        let alert = UIAlertController(title: "Save Matrix", message: "Enter Matrix Title", preferredStyle: .alert)
+        
+        alert.addTextField(configurationHandler: nil)
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields?[0]
+            self.matrix.save(title: (textField?.text)!)
+            //print((textField?.text)!)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func nextMatrixButton(_ sender: UIButton) {
+        
+        createMatrix()
+        
+        guard let operationVC = storyboard?.instantiateViewController(withIdentifier: "operations") as? Operations else {
+            return
+        }
+        
+        operationVC.lastOperation = operation
+        operationVC.matrix = matrix
+        operationVC.oldMatrix = oldMatrix
+        present(operationVC, animated: true)
+    }
+    
+    func createMatrix(){
         
         var path = IndexPath()
         var cell = matrixCell()
-        matrix = Matrix(cols: cols, rows: rows)
+        if rows < 1 || cols < 1 {
+            return
+        }
         
         for i in 0...(rows - 1) {
             for j in 0...(cols - 1) {
@@ -44,15 +85,6 @@ class MatrixVC: UIViewController {
                 }
             }
         }
-    
-        guard let operationVC = storyboard?.instantiateViewController(withIdentifier: "operations") as? Operations else {
-            return
-        }
-        
-        operationVC.lastOperation = operation
-        operationVC.matrix = matrix
-        operationVC.oldMatrix = oldMatrix
-        present(operationVC, animated: true)
     }
     
     @IBAction func enterMatrixButton(_ sender: UIButton) {
@@ -67,10 +99,9 @@ class MatrixVC: UIViewController {
         if rows == 0 || cols == 0 || rows > 100 || cols > 100 {
             return
         }
-        
+        matrix = Matrix(cols: cols, rows: rows)
         matrixCollectionView?.reloadData()
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +109,7 @@ class MatrixVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        if operation == "add" || operation == "sub" {
+        if operation == "add" || operation == "sub" || fromCoreData {
             hideInputs()
             return
         }
@@ -91,7 +122,7 @@ class MatrixVC: UIViewController {
         else {
             
         }
-        
+        matrixCollectionView.reloadData()
     }
         
     func hideInputs(){
@@ -109,7 +140,6 @@ class MatrixVC: UIViewController {
         titleLabel.isHidden        = false
         xLabel.isHidden            = false
     }
-
 }
 
 extension MatrixVC: UICollectionViewDataSource {
@@ -126,10 +156,11 @@ extension MatrixVC: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? matrixCell
         cell?.backgroundColor = UIColor.black
+        if fromCoreData {
+            cell?.matrixInput.text = String(describing: matrix.matrix[indexPath.section][indexPath.row])
+        }
         indexPaths.append(indexPath)
         return cell!
     }
-    
-    
 }
 

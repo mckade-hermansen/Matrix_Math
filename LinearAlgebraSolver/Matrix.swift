@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class Matrix: NSCopying {
     
@@ -33,12 +34,6 @@ class Matrix: NSCopying {
         self.det = det
         self.matrix = matrix
         self.isEmpty = isEmpty
-    }
-    
-    func setDimensions(rows: Int, cols: Int){
-        
-        self.rows = rows
-        self.cols = cols
     }
     
     func isSquare() -> Bool {
@@ -141,6 +136,24 @@ class Matrix: NSCopying {
         
         let copy = Matrix(rows: rows, cols: cols, det: det, matrix: matrix, isEmpty: isEmpty)
         return copy
+    }
+    
+    func save(title: String) {
+        
+        let context = AppDelegate.viewContext
+        
+        let matrixEntity = MatrixEntity(context: context)
+        matrixEntity.rows = Int16(rows)
+        matrixEntity.cols = Int16(cols)
+        matrixEntity.det = Int16(det)
+        matrixEntity.title = title
+        matrixEntity.matrix = matrix as NSObject?
+        
+        do {
+            try context.save()
+        } catch {
+            print("DID NOT SAVE")
+        }
     }
 
 }
