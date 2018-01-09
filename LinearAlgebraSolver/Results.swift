@@ -18,6 +18,18 @@ class Results: UIViewController {
     @IBOutlet weak var resultsTitleLabel: UILabel!
     @IBOutlet weak var resultsMatrix: UICollectionView!
     
+    @IBAction func doOperationButton(_ sender: UIButton) {
+        
+        guard let operationVC = storyboard?.instantiateViewController(withIdentifier: "operations") as? Operations else {
+            return
+        }
+        
+        operationVC.lastOperation = operation
+        operationVC.matrix = resMatrix
+        operationVC.oldMatrix = Matrix(cols: resMatrix.cols, rows: resMatrix.rows)
+        present(operationVC, animated: true)
+    }
+    
     @IBAction func StartOverPressed(_ sender: UIButton) {
         
         guard let matrixVC = storyboard?.instantiateViewController(withIdentifier: "matrix") as? MatrixVC else {
