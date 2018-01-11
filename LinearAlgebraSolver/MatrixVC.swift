@@ -92,19 +92,26 @@ class MatrixVC: UIViewController {
         let rowText = rowTextField.text!
         let colText = colTextField.text!
         if rowText.isEmpty || colText.isEmpty || Int(rowText) == nil || Int(colText) == nil {
+            showDimentionInputError()
             return
         }
-        rows = Int(rowTextField.text!)!
-        cols = Int(colTextField.text!)!
+        rows = Int(rowText)!
+        cols = Int(colText)!
         if rows == 0 || cols == 0 || rows > 100 || cols > 100 {
+            showDimentionInputError()
             return
         }
         matrix = Matrix(cols: cols, rows: rows)
         matrixCollectionView?.reloadData()
+        hideKeyboard()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        matrixCollectionView?.delegate = self
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        matrixCollectionView?.addGestureRecognizer(tapGesture)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -116,7 +123,7 @@ class MatrixVC: UIViewController {
         else if operation == "mul" {
             showInputs()
             rowTextField.isEnabled = false
-            rowTextField.text = String(cols)
+            rowTextField.text = String(rows)
             matrixCollectionView?.reloadData()
         }
         else {
@@ -124,7 +131,11 @@ class MatrixVC: UIViewController {
         }
         matrixCollectionView.reloadData()
     }
-        
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        hideKeyboard()
+    }
+    
     func hideInputs(){
         rowTextField.isHidden      = true
         colTextField.isHidden      = true
@@ -139,6 +150,18 @@ class MatrixVC: UIViewController {
         enterButtonOutlet.isHidden = false
         titleLabel.isHidden        = false
         xLabel.isHidden            = false
+    }
+    
+    func showDimentionInputError() {
+        
+        let alert = UIAlertController(title: "Invalid Input", message: "Please enter a number from 1-100 for both rows and columns", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
     }
 }
 
@@ -163,4 +186,13 @@ extension MatrixVC: UICollectionViewDataSource {
         return cell!
     }
 }
+
+extension MatrixVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+    }
+}
+
+
 

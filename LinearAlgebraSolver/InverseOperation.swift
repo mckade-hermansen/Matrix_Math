@@ -27,7 +27,9 @@ class InverseOperation: Operation {
         
         if newMatrix.cols == 2 {
             resultMatrix = newMatrix.copy() as! Matrix
-            swap(&resultMatrix.matrix[0][0], &resultMatrix.matrix[1][1])
+            let temp = resultMatrix.matrix[0][0]
+            resultMatrix.matrix[0][0] = resultMatrix.matrix[1][1]
+            resultMatrix.matrix[1][1] = temp
             resultMatrix.matrix[0][1] = (resultMatrix.matrix[0][1] as! Int) * (-1)
             resultMatrix.matrix[1][0] = (resultMatrix.matrix[1][0] as! Int) * (-1)
         }

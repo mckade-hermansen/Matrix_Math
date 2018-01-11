@@ -20,7 +20,7 @@ class MultiplyOperation: Operation {
     override func execute() {
         
         if oldMatrix.isEmpty {
-            resultMatrix = newMatrix
+            resultMatrix = newMatrix.transpose()
             return
         }
         

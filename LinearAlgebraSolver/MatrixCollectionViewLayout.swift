@@ -16,7 +16,7 @@ class MatrixCollectionViewLayout: UICollectionViewLayout {
     
     override func prepare() {
         
-        computeWidthOffset()
+        //computeWidthOffset()
         //computeHeightOffset()
         
         if collectionView!.numberOfSections > 0 {
@@ -36,12 +36,11 @@ class MatrixCollectionViewLayout: UICollectionViewLayout {
                     }
                 }
             }
-            let contentWidth = (Double(collectionView!.numberOfItems(inSection: 0)) * CELL_WIDTH) + offsetWidth
-            let contentHeight = (Double(collectionView!.numberOfSections) * CELL_HEIGHT) + offsetHeight
+            let contentWidth = (Double(collectionView!.numberOfItems(inSection: 0)) * CELL_WIDTH)
+            let contentHeight = (Double(collectionView!.numberOfSections) * CELL_HEIGHT)
             self.contentSize = CGSize(width: contentWidth, height: contentHeight)
+            
         }
-        
-        
     }
 
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -65,6 +64,8 @@ class MatrixCollectionViewLayout: UICollectionViewLayout {
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return false
     }
+    
+    
     
     func computeWidthOffset() {
         
